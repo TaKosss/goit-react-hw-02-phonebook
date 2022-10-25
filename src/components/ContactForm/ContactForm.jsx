@@ -2,25 +2,28 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { nanoid } from 'nanoid';
 import schema from 'validation/validation';
 
-const initialValues = { name: '', number: '' };
+const initialValues = {
+  name: '',
+  number: '',
+};
 
-const ContactForm = () => {
-  const handleSubmit = (values, { resetForm }) => {
-    resetForm();
-  };
+const nameId = nanoid();
+const numberId = nanoid();
+
+const ContactForm = ({ onSubmit }) => {
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
       validationSchema={schema}
     >
       <Form autoComplete="off">
-        <label>
-          Name <Field type="text" name="name" required />
+        <label htmlFor={nameId}>
+          Name <Field type="text" name="name" id={nameId} />
           <ErrorMessage name="name" />
         </label>
-        <label>
-          Number <Field type="tel" name="number" required />
+        <label htmlFor={numberId}>
+          Number <Field type="tel" name="number" id={numberId} />
           <ErrorMessage name="number" />
         </label>
         <button type="submit">Add contact</button>
