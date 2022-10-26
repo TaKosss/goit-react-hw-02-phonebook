@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter/Filter';
+import ContactForm from '../ContactForm';
+import ContactList from '../ContactList';
+import Filter from '../Filter/Filter';
 import Notiflix from 'notiflix';
 import { nanoid } from 'nanoid';
+
+import {
+  Body,
+  Wrap,
+  PhonebookTitle,
+  ContactsTitle,
+} from 'components/App/App.styled';
 
 export default class App extends Component {
   state = {
@@ -52,17 +59,18 @@ export default class App extends Component {
   };
   render() {
     return (
-      <div>
-        <h1>Phonebook</h1>
-        <ContactForm onSubmit={this.contactFormHandler} />
-
-        <h2>Contacts</h2>
-        <Filter value={this.state.filter} onChange={this.changeFilter} />
-        <ContactList
-          contacts={this.filterContacts}
-          onDeleteContact={this.onDeleteContact}
-        />
-      </div>
+      <Body>
+        <Wrap>
+          <PhonebookTitle>Phonebook</PhonebookTitle>
+          <ContactForm onSubmit={this.contactFormHandler} />
+          <ContactsTitle>Contacts</ContactsTitle>
+          <Filter value={this.state.filter} onChange={this.changeFilter} />
+          <ContactList
+            contacts={this.filterContacts}
+            onDeleteContact={this.onDeleteContact}
+          />
+        </Wrap>
+      </Body>
     );
   }
 }
