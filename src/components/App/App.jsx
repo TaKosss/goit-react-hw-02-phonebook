@@ -5,12 +5,7 @@ import Filter from '../Filter/Filter';
 import Notiflix from 'notiflix';
 import { nanoid } from 'nanoid';
 
-import {
-  Body,
-  Wrap,
-  PhonebookTitle,
-  ContactsTitle,
-} from 'components/App/App.styled';
+import { Body, Wrap, Title } from 'components/App/App.styled';
 
 export default class App extends Component {
   state = {
@@ -61,9 +56,9 @@ export default class App extends Component {
     return (
       <Body>
         <Wrap>
-          <PhonebookTitle>Phonebook</PhonebookTitle>
+          <Title>Phonebook</Title>
           <ContactForm onSubmit={this.contactFormHandler} />
-          <ContactsTitle>Contacts</ContactsTitle>
+          <Title>Contacts</Title>
           <Filter value={this.state.filter} onChange={this.changeFilter} />
           <ContactList
             contacts={this.filterContacts}

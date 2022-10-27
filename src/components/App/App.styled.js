@@ -18,7 +18,7 @@ export const Wrap = styled.div`
     border: 6px solid rgba(0, 0, 0, 0.3);
     box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);`
 
-export const PhonebookTitle = styled.h1`
+export const Title = styled.h2`
 font-weight: 700;
   font-size: 26px;
    text-transform: uppercase;
@@ -28,12 +28,3 @@ font-weight: 700;
   color: rgb(75,0,130);
   margin-bottom: 20px;`
               
-export const ContactsTitle = styled.h2`
-font-weight: 600;
-  font-size: 22px;
-   text-transform: uppercase;
-  line-height: 1.15;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: rgb(75,0,130);
-  margin: 20px 0px;`
